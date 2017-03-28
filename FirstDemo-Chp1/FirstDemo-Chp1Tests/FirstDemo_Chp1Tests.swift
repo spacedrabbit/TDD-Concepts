@@ -11,9 +11,13 @@ import XCTest
 
 class FirstDemo_Chp1Tests: XCTestCase {
   
+  var viewController: ViewController!
+  
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.continueAfterFailure = false // this will stop as soon as something fails
+    viewController = ViewController()
   }
   
   override func tearDown() {
@@ -27,6 +31,7 @@ class FirstDemo_Chp1Tests: XCTestCase {
     
     let numberOfVowels = viewController.numberOfVowels(in: string)
     
+    // Part 1:
     // XCTAssertEqual(numberOfVowels, 3, "should find three vowels in Dominik")
     
     // The last three parameters of all XCTAsset functions are optional: message, file, and line
@@ -49,7 +54,44 @@ class FirstDemo_Chp1Tests: XCTestCase {
      */
     
     XCTAssertEqual(numberOfVowels, 3, "should find three vowels in Dominik", file: "FirstDemo_Chp1Tests.swift", line: 24)
-    
   }
   
+  /*
+0    // Part 2:
+    // Now in the refactor stage, we see that viewcontroller is used twice, making it a candidate 
+    // to refactor through DRY
+    // let viewController: ViewController = ViewController()
+    
+    let string = "this is A test headline"
+    let headline = viewController.makeHeadline(from: string)
+    
+    XCTAssertEqual(headline, "This Is A Test Headline", "headlines should be capital case")
+  }
+  
+  func test_MakeHeadline_ReturnStringWithEachWordStartCapital2() {
+    let string = "Here is another example"
+    let headline = viewController.makeHeadline(from: string)
+    XCTAssertEqual(headline, "Here Is Another Example", "headlines should be capital case")
+  }
+  */
+  
+  // Part 3: Better Readability
+  func test_MakeHeadline_ReturnStringWithEachWordStartCapital() {
+    let input = "this is A test headline"
+    let expectedOutput = "This Is A Test Headline"
+      
+    let headline = viewController.makeHeadline(from: input)
+    
+    XCTAssertEqual(headline, expectedOutput, "headlines should be capital case")
+  }
+  
+  func test_MakeHeadline_ReturnStringWithEachWordStartCapital2() {
+    let string = "Here is another example"
+    let expectedOutput = "Here Is Another Example"
+    
+    let headline = viewController.makeHeadline(from: string)
+    
+    XCTAssertEqual(headline, expectedOutput, "headlines should be capital case")
+  }
+
 }

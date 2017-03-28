@@ -13,6 +13,7 @@
 		1419E9341E85E9DE007C8067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1419E9331E85E9DE007C8067 /* Assets.xcassets */; };
 		1419E9371E85E9DE007C8067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1419E9351E85E9DE007C8067 /* LaunchScreen.storyboard */; };
 		1419E9421E85E9DE007C8067 /* FirstDemo_Chp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1419E9411E85E9DE007C8067 /* FirstDemo_Chp1Tests.swift */; };
+		14D222D91E89E54800ECA88B /* PATs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D222D81E89E54800ECA88B /* PATs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1419E93D1E85E9DE007C8067 /* FirstDemo-Chp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FirstDemo-Chp1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1419E9411E85E9DE007C8067 /* FirstDemo_Chp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDemo_Chp1Tests.swift; sourceTree = "<group>"; };
 		1419E9431E85E9DE007C8067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D222D81E89E54800ECA88B /* PATs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				1419E92C1E85E9DE007C8067 /* AppDelegate.swift */,
 				1419E92E1E85E9DE007C8067 /* ViewController.swift */,
+				14D222D81E89E54800ECA88B /* PATs.swift */,
 				1419E9301E85E9DE007C8067 /* Main.storyboard */,
 				1419E9331E85E9DE007C8067 /* Assets.xcassets */,
 				1419E9351E85E9DE007C8067 /* LaunchScreen.storyboard */,
@@ -203,6 +206,7 @@
 			files = (
 				1419E92F1E85E9DE007C8067 /* ViewController.swift in Sources */,
 				1419E92D1E85E9DE007C8067 /* AppDelegate.swift in Sources */,
+				14D222D91E89E54800ECA88B /* PATs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +414,7 @@
 				1419E9481E85E9DE007C8067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1419E9491E85E9DE007C8067 /* Build configuration list for PBXNativeTarget "FirstDemo-Chp1Tests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +423,7 @@
 				1419E94B1E85E9DE007C8067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

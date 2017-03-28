@@ -8,10 +8,61 @@
 
 import UIKit
 
+
+protocol Animal {
+  var name: String { get set }
+  var sound: String { get set }
+}
+
+protocol Rideable {
+  associatedtype AnimalType: Animal
+  
+  init()
+  func soundMade() -> String
+  func myName() -> String
+  func animalType() -> AnimalType
+}
+
+class Cat: Animal, Rideable {
+  var name: String = "Cat"
+  var sound: String = "Meow"
+  typealias AnimalType = Cat
+  
+  required init() {}
+  
+  func soundMade() -> String {
+     return self.sound
+  }
+  
+  func myName() -> String {
+    return self.name
+  }
+  
+  func animalType() -> AnimalType {
+    return self
+  }
+}
+
+class AnimalShelter {
+  
+  func adopt<T: Rideable>(_ animal: T.Type) {
+    
+    let newAnimal = animal.init()
+    
+    print("Hi, i'm a \(newAnimal.soundMade())")
+  }
+  
+}
+
+
 class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let shelter = AnimalShelter()
+    shelter.adopt(Cat.self)
+    
     // Do any additional setup after loading the view, typically from a nib.
   }
   
@@ -50,6 +101,26 @@ class ViewController: UIViewController {
     return string.characters.reduce(0) {
       $0 + (vowels.contains($1) ? 1 : 0)
     }
+  }
+  
+  func makeHeadline(from string: String) -> String {
+    // following TDD, we need to return the simplest code needed to pass (Green stage)
+    // return "This Is A Test Headline"
+    
+    // Book example (Mostly)
+    /*
+    let words = string.components(separatedBy: " ")
+    var headline = ""
+    for word in words {
+      headline += word.capitalized + " "
+    }
+    headline.remove(at: headline.index(before: headline.endIndex))
+    */
+    
+    // My Swifty solution
+    return string.components(separatedBy: " ").map {
+      $0.capitalized
+    }.joined(separator: " ")
   }
   
 }
